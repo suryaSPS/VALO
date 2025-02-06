@@ -2,36 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>To Yuvika</title>
+  <title>My VALO Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Basic resets and styling for a full-page layout */
-    body, html {
+    /* Your CSS styling here */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    /* Hide the default audio controls if you like */
-    #backgroundMusic {
-      display: none;
-    }
-    /* The iframe takes up the entire viewport */
-    #content {
-      width: 100%;
-      height: 100%;
-      border: none;
+      padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <!-- Background Music: Replace YOUR_SONG_LINK_HERE with your song link -->
-  <audio id="backgroundMusic" loop autoplay>
-    <source src="https://suryasps.github.io/VALO/Leja.mp3
-    " type="audio/mpeg">
+  <h1>Welcome to My VALO Website!</h1>
+  <p>Enjoy the music in the background as soon as the site loads.</p>
+
+  <!-- Background Music -->
+  <audio id="backgroundMusic" autoplay loop>
+    <!-- Replace the URL below with your direct audio file URL hosted on GitHub Pages -->
+    <source src="https://suryasps.github.io/VALO/song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  
-  <!-- The iframe that will load your content pages -->
-  <iframe id="content" src="question1.html"></iframe>
+
+  <script>
+    // Attempt to play the audio as soon as the page loads.
+    // Note: Many browsers block autoplay for non-muted audio.
+    window.addEventListener('load', function() {
+      const music = document.getElementById('backgroundMusic');
+      music.play().catch(function(error) {
+        console.log("Autoplay prevented:", error);
+        // Optionally, you can display a message or a button for the user to click.
+      });
+    });
+  </script>
 </body>
 </html>
