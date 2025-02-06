@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I've been meaning to ask you something</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Use the same style as your Valentine pages */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #f5b7b1, #f9e79f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #e74c3c;
+    }
+    button {
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I've been meaning to ask you something</h1>
+    <button id="startButton">Start</button>
+  </div>
+
+  <!-- Audio element to play the song -->
+  <audio id="backgroundMusic" loop>
+    <!-- Replace "song.mp3" with the relative path to your audio file if needed -->
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // When the user clicks the "Start" button, play the audio and then navigate to question1.html.
+    document.getElementById('startButton').addEventListener('click', function() {
+      const music = document.getElementById('backgroundMusic');
+      music.play().catch(function(error) {
+        console.log("Audio playback was prevented:", error);
+      });
+      // Redirect to the first question page
+      window.location.href = 'question1.html';
+    });
+  </script>
+</body>
+</html>
